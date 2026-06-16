@@ -23,8 +23,8 @@ The simulator utilizes custom high-fidelity gold US Quarter designs:
 ├── index.html       # Application markup & accessibility attributes
 ├── style.css        # Layout, typography tokens, glassmorphism, 3D animations
 ├── script.js        # Web Audio API engine, particle systems, app state managers
-├── heads.jpg        # George Washington US Quarter face (Heads)
-├── tails.jpg        # American Eagle US Quarter face (Tails)
+├── us-heads.jpg     # George Washington US Quarter face (Heads)
+├── us-tails.jpg     # American Eagle US Quarter face (Tails)
 └── .gitignore       # Exclusions for OS metadata & IDE projects
 ```
 

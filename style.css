@@ -650,12 +650,12 @@ h1 {
 }
 
 .history-badge.heads {
-  background-image: url('heads.jpg');
+  background-image: url('us-heads.jpg');
   box-shadow: 0 0 10px rgba(243, 198, 35, 0.2);
 }
 
 .history-badge.tails {
-  background-image: url('tails.jpg');
+  background-image: url('us-tails.jpg');
   box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
 }
 
