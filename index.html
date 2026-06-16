@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Quantum Flip - The ultimate 3D coin simulator with statistics, betting, sounds, and history logs.">
+  <title>Quantum Flip - Premium 3D Coin Flipper</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="app-container">
+    <header>
+      <h1>Quantum Flip</h1>
+      <p class="subtitle">Experience the ultimate 3D decision maker</p>
+    </header>
+
+    <main class="dashboard">
+      <!-- Left Panel: Arena & Controls -->
+      <section class="panel" aria-labelledby="arena-title">
+        <h2 id="arena-title" class="visually-hidden" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Coin Arena</h2>
+        
+        <!-- Prediction Selection -->
+        <div class="prediction-section">
+          <span class="prediction-title" id="predict-label">Predict the outcome (Optional)</span>
+          <div class="prediction-options" role="radiogroup" aria-labelledby="predict-label">
+            <button id="predict-heads" class="predict-btn" role="radio" aria-checked="false" type="button">
+              🪙 Heads
+            </button>
+            <button id="predict-tails" class="predict-btn" role="radio" aria-checked="false" type="button">
+              ✨ Tails
+            </button>
+          </div>
+        </div>
+
+        <!-- Coin Arena -->
+        <div class="arena">
+          <div class="coin-wrapper" id="coin-interactive-wrapper" tabindex="0" role="button" aria-label="Flip coin">
+            <div class="coin-glow"></div>
+            <div class="coin" id="coin-element">
+              <!-- Heads Face -->
+              <div class="coin-face heads">
+                <img src="heads.jpg" alt="Heads side of coin - features a geometric gold lion logo.">
+              </div>
+              <!-- Tails Face -->
+              <div class="coin-face tails">
+                <img src="tails.jpg" alt="Tails side of coin - features a celestial moon and crown design.">
+              </div>
+            </div>
+            <div class="coin-shadow" id="coin-shadow-element"></div>
+          </div>
+        </div>
+
+        <!-- Result Banner -->
+        <div id="result-banner" class="result-banner" aria-live="polite">
+          Ready to spin...
+        </div>
+
+        <!-- Action Controls -->
+        <div class="controls">
+          <button id="flip-button" class="flip-btn" type="button">
+            Flip Coin
+          </button>
+          
+          <div class="utility-bar">
+            <button id="sound-toggle" class="utility-btn" type="button" aria-label="Toggle sound effects">
+              🔊 Sounds On
+            </button>
+            <span class="utility-divider">|</span>
+            <button id="reset-stats-btn" class="utility-btn" type="button">
+              🔄 Reset Stats
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Panel: Stats & History -->
+      <section class="panel side-panel" aria-labelledby="stats-title">
+        <h2 id="stats-title" class="visually-hidden" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Statistics and History</h2>
+        
+        <!-- Stats Row -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-label">Flips</span>
+            <span id="stat-total" class="stat-value">0</span>
+            <span class="stat-sub">Total spins</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Heads</span>
+            <span id="stat-heads" class="stat-value">0</span>
+            <span id="stat-heads-pct" class="stat-sub">0%</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Tails</span>
+            <span id="stat-tails" class="stat-value">0</span>
+            <span id="stat-tails-pct" class="stat-sub">0%</span>
+          </div>
+        </div>
+
+        <!-- Ratio Visualizer -->
+        <div class="ratio-visualizer">
+          <div class="ratio-wrap">
+            <div class="ratio-bar-container">
+              <div id="ratio-heads" class="ratio-bar-heads"></div>
+              <div id="ratio-tails" class="ratio-bar-tails"></div>
+            </div>
+            <div class="ratio-labels">
+              <span style="color: var(--primary-gold)">Heads (<span id="ratio-heads-label">50%</span>)</span>
+              <span style="color: var(--accent-purple)">Tails (<span id="ratio-tails-label">50%</span>)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- History Tab -->
+        <div class="history-section">
+          <div class="section-header">
+            <span class="section-title">Recent Flips</span>
+            <button id="clear-history" class="clear-history-btn" type="button">Clear</button>
+          </div>
+          
+          <ul id="history-list" class="history-list">
+            <!-- Dynamically populated or displays empty message -->
+            <div id="empty-history-msg" class="empty-history">
+              No flips recorded yet. Flip the coin to start logs!
+            </div>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Crafted by Antigravity © 2026</p>
+    </footer>
+  </div>
+
+  <!-- Confetti Canvas for Winners -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
